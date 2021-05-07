@@ -123,3 +123,17 @@ Debe iniciar sesión en la nueva cuenta de usuario sin utilizar una contraseña.
 ``` sudo comando_ejecutar``` 
  
 Se le pedirá su contraseña de usuario habitual cuando utilice sudo por primera vez en cada sesión (y periódicamente después).
+
+## Paso 6 Adecuación de entorno
+
+Introducción
+Una entorno "LAMP" es un grupo de software de código abierto que normalmente se instala junto para permitir que un servidor aloje sitios web dinámicos y aplicaciones web escritas en PHP. Este término es un acrónimo que representa el sistema operativo Linux, con el servidor web Apache. Los datos del sitio se almacenan en una base de datos MySQL y PHP procesa el contenido dinámico.
+
+En esta guía, instalaremos una entorno LAMP en un servidor Ubuntu 20.04 para esto prepararemos el entorno:
+```sudo apt update && sudo apt-get upgrade```
+
+## Paso 7: instalación de Apache y actualización del cortafuegos o Firewall
+El servidor web Apache se encuentra entre los servidores web más populares del mundo. Está bien documentado, tiene una comunidad activa de usuarios y se ha utilizado ampliamente durante gran parte de la historia de la web, lo que la convierte en una excelente opción predeterminada para alojar un sitio web.
+
+Instale Apache usando el administrador de paquetes de Ubuntu, apt:
+```sudo apt install apache2```

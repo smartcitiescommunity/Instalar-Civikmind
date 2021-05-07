@@ -210,3 +210,16 @@ Un método alternativo es usar la utilidad curl para contactar a un tercero y de
 
 Independientemente del método que utilice para obtener su dirección IP, escríbalo en la barra de direcciones de su navegador web para ver la página Apache predeterminada.
 
+Paso 8: instalar MySQL
+Ahora que tiene un servidor web en funcionamiento, debe instalar el sistema de base de datos para poder almacenar y administrar los datos de su sitio. MySQL es un popular sistema de gestión de bases de datos que se utiliza en entornos PHP.
+
+Nuevamente, use apt para adquirir e instalar este software:
+
+```sudo apt install mysql-server```
+
+Cuando se le solicite, confirme la instalación escribiendo Y y luego ENTER.
+
+Cuando finalice la instalación, se recomienda que ejecute un script de seguridad que viene preinstalado con MySQL. Este script eliminará algunas configuraciones predeterminadas inseguras y bloqueará el acceso a su sistema de base de datos. Inicie el script interactivo ejecutando:
+
+```sudo mysql_secure_installation```
+

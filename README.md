@@ -191,5 +191,21 @@ Puede hacer una verificación al azar de inmediato para verificar que todo sali�
 
 Verá la página web predeterminada de Ubuntu 20.04 Apache, que está allí con fines informativos y de prueba. Debería verse algo como esto:
 
-![GitHub Logo](https://assets.digitalocean.com/articles/how-to-install-lamp-ubuntu-18/small_apache_default_1804.png)
+![Apache 2](https://assets.digitalocean.com/articles/how-to-install-lamp-ubuntu-18/small_apache_default_1804.png)
+
+Si ve esta página, entonces su servidor web ahora está correctamente instalado y accesible a través de su firewall.
+
+Cómo encontrar la dirección IP pública de su servidor
+Si no sabe cuál es la dirección IP pública de su servidor, hay varias formas de encontrarla. Por lo general, esta es la dirección que usa para conectarse a su servidor a través de SSH.
+
+Hay algunas formas diferentes de hacer esto desde la línea de comandos. Primero, puede usar las herramientas iproute2 para obtener su dirección IP escribiendo esto:
+
+```ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'```
+
+Esto le devolverá dos o tres líneas. Todas son direcciones correctas, pero es posible que su computadora solo pueda usar una de ellas, así que siéntase libre de probar cada una.
+
+Un método alternativo es usar la utilidad curl para contactar a un tercero y decirle cómo ve su servidor. Esto se hace preguntando a un servidor específico cuál es su dirección IP:
+
+```curl http://icanhazip.com```
+
 

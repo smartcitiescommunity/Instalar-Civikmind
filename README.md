@@ -223,3 +223,8 @@ Cuando finalice la instalación, se recomienda que ejecute un script de segurida
 
 ```sudo mysql_secure_installation```
 
+Esto le preguntará si desea configurar el PLUGIN VALIDAR CONTRASEÑA.
+
+Nota: Habilitar esta función es una especie de decisión. Si está habilitado, las contraseñas que no coincidan con los criterios especificados serán rechazadas por MySQL con un error. Es seguro dejar la validación deshabilitada, pero siempre debe usar contraseñas únicas y seguras para las credenciales de la base de datos.
+
+Responda Y para sí, o cualquier otra cosa para continuar sin habilitar.

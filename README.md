@@ -82,4 +82,15 @@ Status: active
 To                         Action      From
 --                         ------      ----
 OpenSSH                    ALLOW       Anywhere
-OpenSSH (v6)               ALLOW       Anywhere (v6)```
+OpenSSH (v6)               ALLOW       Anywhere (v6)
+```
+
+## Paso 5: Habilitación del acceso externo para su usuario habitual
+Ahora que tenemos un usuario habitual para el uso diario, debemos asegurarnos de poder acceder directamente a la cuenta mediante SSH.
+
+Nota: Hasta que verifique que puede iniciar sesión y usar sudo con su nuevo usuario, le recomendamos que permanezca conectado como root. De esta manera, si tiene problemas, puede solucionar problemas y realizar los cambios necesarios como root. Si está utilizando una instancia y experimenta problemas con su conexión SSH raíz, puede iniciar sesión en la instancia usando la Consola de de su proveedor.
+
+El proceso para configurar el acceso SSH para su nuevo usuario depende de si la cuenta raíz de su servidor utiliza una contraseña o claves SSH para la autenticación.
+
+Si la cuenta raíz utiliza autenticación de contraseña
+Si inició sesión en su cuenta raíz con una contraseña, la autenticación de contraseña está habilitada para SSH. Puede SSH a su nueva cuenta de usuario abriendo una nueva sesión de terminal y usando SSH con su nuevo nombre de usuario:

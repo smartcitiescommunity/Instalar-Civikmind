@@ -210,7 +210,7 @@ Un método alternativo es usar la utilidad curl para contactar a un tercero y de
 
 Independientemente del método que utilice para obtener su dirección IP, escríbalo en la barra de direcciones de su navegador web para ver la página Apache predeterminada.
 
-Paso 8: instalar MySQL
+## Paso 8: instalar MySQL
 Ahora que tiene un servidor web en funcionamiento, debe instalar el sistema de base de datos para poder almacenar y administrar los datos de su sitio. MySQL es un popular sistema de gestión de bases de datos que se utiliza en entornos PHP.
 
 Nuevamente, use apt para adquirir e instalar este software:
@@ -228,3 +228,12 @@ Esto le preguntará si desea configurar el PLUGIN VALIDAR CONTRASEÑA.
 Nota: Habilitar esta función es una especie de decisión. Si está habilitado, las contraseñas que no coincidan con los criterios especificados serán rechazadas por MySQL con un error. Es seguro dejar la validación deshabilitada, pero siempre debe usar contraseñas únicas y seguras para las credenciales de la base de datos.
 
 Responda Y para sí, o cualquier otra cosa para continuar sin habilitar.
+
+```
+VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No:```
+

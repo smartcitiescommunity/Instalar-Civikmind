@@ -33,3 +33,53 @@ Este ejemplo crea un nuevo usuario llamado sammy, pero debes reemplazarlo con un
 Se le harán algunas preguntas, comenzando con la contraseña de la cuenta.
 
 Ingrese una contraseña segura y, opcionalmente, complete cualquier información adicional si lo desea. Esto no es obligatorio y puede presionar ENTER en cualquier campo que desee omitir.
+
+
+## Paso 3: concesión de privilegios administrativos
+Ahora, tenemos una nueva cuenta de usuario con privilegios de cuenta regulares. Sin embargo, es posible que a veces necesitemos realizar tareas administrativas.
+
+Para evitar tener que cerrar la sesión de nuestro usuario normal y volver a iniciarla como la cuenta root, podemos configurar lo que se conoce como privilegios de superusuario o root para nuestra cuenta normal. Esto permitirá a nuestro usuario normal ejecutar comandos con privilegios administrativos poniendo la palabra sudo antes de cada comando.
+
+Para agregar estos privilegios a nuestro nuevo usuario, necesitamos agregar el usuario al grupo sudo. De forma predeterminada, en Ubuntu 20.04, los usuarios que son miembros del grupo sudo pueden usar el comando sudo.
+
+Como root, ejecute este comando para agregar su nuevo usuario al grupo sudo (sustituya el nombre de usuario resaltado con su nuevo usuario):
+
+```usermod -aG sudo civikmind```
+ 
+Ahora, cuando inicie sesión como su usuario habitual, puede escribir sudo antes de los comandos para realizar acciones con privilegios de superusuario.
+
+Paso 4: configuración de un cortafuegos básico
+Los servidores Ubuntu 20.04 pueden usar el firewall UFW para asegurarse de que solo se permitan conexiones a ciertos servicios. Podemos configurar un firewall básico muy fácilmente usando esta aplicación.
+
+Nota: Si sus servidores se ejecutan en DigitalOcean, opcionalmente puede usar DigitalOcean Cloud Firewalls en lugar del firewall UFW. Recomendamos usar solo un firewall a la vez para evitar reglas conflictivas que pueden ser difíciles de depurar.
+
+Las aplicaciones pueden registrar sus perfiles con UFW tras la instalación. Estos perfiles permiten a UFW administrar estas aplicaciones por nombre. OpenSSH, el servicio que ahora nos permite conectarnos a nuestro servidor, tiene un perfil registrado en UFW.
+
+Puede ver esto escribiendo:
+
+```ufw app list```
+ 
+```Output
+Available applications:
+  OpenSSH```
+```
+
+Necesitamos asegurarnos de que el firewall permita conexiones SSH para que podamos volver a iniciar sesión la próxima vez. Podemos permitir estas conexiones escribiendo:
+
+```ufw allow OpenSSH```
+ 
+Luego, podemos habilitar el firewall escribiendo:
+
+```ufw enable```
+ 
+Escriba y y presione ENTER para continuar. Puede ver que las conexiones SSH todavía están permitidas escribiendo:
+
+```ufw status
+
+Output
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere
+OpenSSH (v6)               ALLOW       Anywhere (v6)```

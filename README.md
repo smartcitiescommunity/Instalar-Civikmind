@@ -104,3 +104,10 @@ Después de ingresar la contraseña de su usuario habitual, iniciará sesión. R
 Se le pedirá su contraseña de usuario habitual cuando utilice sudo por primera vez en cada sesión (y periódicamente después).
 
 Para mejorar la seguridad de su servidor, recomendamos encarecidamente configurar claves SSH en lugar de utilizar la autenticación de contraseña.
+
+Si la cuenta raíz utiliza autenticación de clave SSH
+Si inició sesión en su cuenta raíz con claves SSH, la autenticación de contraseña está deshabilitada para SSH. Deberá agregar una copia de su clave pública local al archivo ```~ /.ssh/``` authorised_keys del nuevo usuario para iniciar sesión correctamente.
+
+Dado que su clave pública ya está en el archivo ```~ /.ssh/``` allowed_keys de la cuenta raíz en el servidor, podemos copiar ese archivo y estructura de directorio a nuestra nueva cuenta de usuario en nuestra sesión existente.
+
+La forma más sencilla de copiar los archivos con la propiedad y los permisos correctos es con el comando rsync. Esto copiará el directorio .ssh del usuario raíz, conservará los permisos y modificará los propietarios del archivo, todo en un solo comando. Asegúrese de cambiar las partes resaltadas del comando a continuación para que coincida con el nombre de su usuario habitual:

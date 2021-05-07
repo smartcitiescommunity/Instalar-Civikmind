@@ -157,3 +157,34 @@ Available applications:
   OpenSSH
 ```
 
+Esto es lo que significa cada uno de estos perfiles:
+
+Apache: este perfil solo abre el puerto 80 (tráfico web normal no cifrado).
+Apache Full: este perfil abre el puerto 80 (tráfico web normal sin cifrar) y el puerto 443 (tráfico cifrado TLS / SSL).
+Apache Secure: este perfil solo abre el puerto 443 (tráfico cifrado TLS / SSL).
+Por ahora, es mejor permitir solo conexiones en el puerto 80, ya que esta es una instalación nueva de Apache y aún no tiene un certificado TLS / SSL configurado para permitir el tráfico HTTPS en su servidor.
+
+Para permitir solo el tráfico en el puerto 80, use el perfil de Apache:
+
+```sudo ufw allow in "Apache"```
+
+Puede verificar el cambio con:
+
+```sudo ufw status```
+
+salida:
+
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere                                
+Apache                     ALLOW       Anywhere                  
+OpenSSH (v6)               ALLOW       Anywhere (v6)                    
+Apache (v6)                ALLOW       Anywhere (v6)     
+```
+
+El tráfico en el puerto 80 ahora está permitido a través del firewall.
+
+Puede hacer una verificación al azar de inmediato para verificar que todo salió según lo planeado visitando la dirección IP pública de su servidor en su navegador web (consulte cuál es su dirección IP pública si no tiene esta información ya y dirijase a ella):

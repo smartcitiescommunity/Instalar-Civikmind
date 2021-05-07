@@ -208,4 +208,5 @@ Un método alternativo es usar la utilidad curl para contactar a un tercero y de
 
 ```curl http://icanhazip.com```
 
+Independientemente del método que utilice para obtener su dirección IP, escríbalo en la barra de direcciones de su navegador web para ver la página Apache predeterminada.
 

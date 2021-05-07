@@ -94,3 +94,13 @@ El proceso para configurar el acceso SSH para su nuevo usuario depende de si la 
 
 Si la cuenta raíz utiliza autenticación de contraseña
 Si inició sesión en su cuenta raíz con una contraseña, la autenticación de contraseña está habilitada para SSH. Puede SSH a su nueva cuenta de usuario abriendo una nueva sesión de terminal y usando SSH con su nuevo nombre de usuario:
+
+```ssh civikmind@mi_dir_ip```
+ 
+Después de ingresar la contraseña de su usuario habitual, iniciará sesión. Recuerde, si necesita ejecutar un comando con privilegios administrativos, escriba sudo antes de este de esta manera:
+
+```sudo command_to_run```
+ 
+Se le pedirá su contraseña de usuario habitual cuando utilice sudo por primera vez en cada sesión (y periódicamente después).
+
+Para mejorar la seguridad de su servidor, recomendamos encarecidamente configurar claves SSH en lugar de utilizar la autenticación de contraseña.

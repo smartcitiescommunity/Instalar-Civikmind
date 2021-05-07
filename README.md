@@ -113,3 +113,13 @@ Dado que su clave pública ya está en el archivo ```~ /.ssh/``` allowed_keys de
 La forma más sencilla de copiar los archivos con la propiedad y los permisos correctos es con el comando rsync. Esto copiará el directorio .ssh del usuario raíz, conservará los permisos y modificará los propietarios del archivo, todo en un solo comando. Asegúrese de cambiar las partes resaltadas del comando a continuación para que coincida con el nombre de su usuario habitual:
 
 ```rsync --archive --chown=civikmind:civikmind ~/.ssh /home/civikmind``` 
+
+Ahora, abra una nueva sesión de terminal en su máquina local y use SSH con su nuevo nombre de usuario:
+
+``` ssh civikmind@mi_dir_ip``` 
+ 
+Debe iniciar sesión en la nueva cuenta de usuario sin utilizar una contraseña. Recuerde, si necesita ejecutar un comando con privilegios administrativos, escriba sudo antes así:
+
+``` sudo comando_ejecutar``` 
+ 
+Se le pedirá su contraseña de usuario habitual cuando utilice sudo por primera vez en cada sesión (y periódicamente después).

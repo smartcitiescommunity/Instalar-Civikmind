@@ -16,3 +16,8 @@ Si aún no está conectado a su servidor, inicie sesión ahora como usuario root
 ```ssh root@mi_direccion_ip```
  
 Acepte la advertencia sobre la autenticidad del host si aparece. Si está usando autenticación de contraseña, proporcione su contraseña de root para iniciar sesión. Si está usando una clave SSH que está protegida con contraseña, es posible que se le solicite que ingrese la contraseña la primera vez que use la clave en cada sesión. Si es la primera vez que inicia sesión en el servidor con una contraseña, es posible que también se le solicite que cambie la contraseña de root.
+
+Sobre root
+El usuario root es el usuario administrativo en un entorno Linux que tiene privilegios muy amplios. Debido a los mayores privilegios de la cuenta raíz, no se le recomienda usarla de forma regular. Esto se debe a que parte del poder inherente a la cuenta raíz es la capacidad de realizar cambios muy destructivos, incluso por accidente.
+
+El siguiente paso es configurar una nueva cuenta de usuario con privilegios reducidos para el uso diario. Más adelante, le enseñaremos cómo obtener mayores privilegios solo en los momentos en que los necesite.

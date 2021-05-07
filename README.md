@@ -130,10 +130,30 @@ Introducción
 Una entorno "LAMP" es un grupo de software de código abierto que normalmente se instala junto para permitir que un servidor aloje sitios web dinámicos y aplicaciones web escritas en PHP. Este término es un acrónimo que representa el sistema operativo Linux, con el servidor web Apache. Los datos del sitio se almacenan en una base de datos MySQL y PHP procesa el contenido dinámico.
 
 En esta guía, instalaremos una entorno LAMP en un servidor Ubuntu 20.04 para esto prepararemos el entorno:
+
 ```sudo apt update && sudo apt-get upgrade```
 
 ## Paso 7: instalación de Apache y actualización del cortafuegos o Firewall
 El servidor web Apache se encuentra entre los servidores web más populares del mundo. Está bien documentado, tiene una comunidad activa de usuarios y se ha utilizado ampliamente durante gran parte de la historia de la web, lo que la convierte en una excelente opción predeterminada para alojar un sitio web.
 
-Instale Apache usando el administrador de paquetes de Ubuntu, apt:
+Instale Apache usando el administrador de paquetes de Ubuntu, ```apt```:
+
 ```sudo apt install apache2```
+
+
+Si es la primera vez que usa ```sudo``` en esta sesión, se le pedirá que proporcione su contraseña de usuario para confirmar que tiene los privilegios adecuados para administrar los paquetes del sistema con ```apt```. También se le pedirá que confirme la instalación de Apache presionando Y, luego ENTER.
+
+Una vez finalizada la instalación, deberá ajustar la configuración de su firewall para permitir el tráfico HTTP. **UFW** tiene diferentes perfiles de aplicación que puede aprovechar para lograrlo. Para enumerar todos los perfiles de aplicaciones UFW disponibles actualmente, puede ejecutar:
+
+```sudo ufw app list```
+
+Verá un resultado como este:
+```
+Output
+Available applications:
+  Apache
+  Apache Full
+  Apache Secure
+  OpenSSH
+```
+

@@ -48,10 +48,10 @@ Como root, ejecute este comando para agregar su nuevo usuario al grupo sudo (sus
  
 Ahora, cuando inicie sesión como su usuario habitual, puede escribir sudo antes de los comandos para realizar acciones con privilegios de superusuario.
 
-Paso 4: configuración de un cortafuegos básico
+## Paso 4: configuración de un cortafuegos básico
 Los servidores Ubuntu 20.04 pueden usar el firewall UFW para asegurarse de que solo se permitan conexiones a ciertos servicios. Podemos configurar un firewall básico muy fácilmente usando esta aplicación.
 
-Nota: Si sus servidores se ejecutan en DigitalOcean, opcionalmente puede usar DigitalOcean Cloud Firewalls en lugar del firewall UFW. Recomendamos usar solo un firewall a la vez para evitar reglas conflictivas que pueden ser difíciles de depurar.
+Nota: Si sus servidores se ejecutan en un sistema cloud, opcionalmente puede usar el Firewalls que tienen incluido en lugar del firewall UFW. Recomendamos usar solo un firewall a la vez para evitar reglas conflictivas que pueden ser difíciles de depurar.
 
 Las aplicaciones pueden registrar sus perfiles con UFW tras la instalación. Estos perfiles permiten a UFW administrar estas aplicaciones por nombre. OpenSSH, el servicio que ahora nos permite conectarnos a nuestro servidor, tiene un perfil registrado en UFW.
 
